@@ -18,6 +18,9 @@ import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+
+import javafx.scene.input.KeyCode;
+
 import java.io.IOException;
 
 public class SimonSays extends KeyAdapter {
@@ -27,7 +30,8 @@ public class SimonSays extends KeyAdapter {
 	private int tries = 0;
 	private boolean simonSays = false;
 	Date timeAtStart;
-
+	int score;
+	
 	// Complete steps 1 - 7 before you test
 	// 1. Declare a JFrame variable
 	JFrame frame;
@@ -47,11 +51,14 @@ public class SimonSays extends KeyAdapter {
 
 	public void keyPressed(KeyEvent e) {
 		// 15. Make a points variable to track the score.
-
+		
 		// 16. If the keyCode matches the imageIndex and "Simon says"
-
+		
 		// 17. Increase the value of score
-
+		if( (e.getKeyCode() == imageIndex && simonSays) || (e.getKeyCode() != imageIndex && !simonSays)) {
+				score ++;
+			System.out.println("CORRECT!");
+		}
 		// 18. Use the speak method to tell the user they were correct
 
 		// 19. If the keyCode doesn't match the imageIndex and "Simon didn't
@@ -62,17 +69,21 @@ public class SimonSays extends KeyAdapter {
 		// 21. Use the speak method to tell the user they were correct
 
 		// 22. Increment tries by 1
-
+		tries++;
 		// 25. If tries is greater than 9 (or however many you want)...
-
+		if (tries > 10) {
+			JOptionPane.showMessageDialog(null, "your score is" + score);
+			System.exit(0);
+		}
 		// 26. Tell the user their score
-
+		
 		// 27. Exit the program
 
 		// 23. Dispose of the frame
-
+		frame .dispose();
 		// 24. Call the showImage method to show a new image
-	}
+		showImage();
+	}	
 
 	private void showImage() {
 		// 5. Initialize your frame to a new JFrame()
@@ -96,7 +107,6 @@ public class SimonSays extends KeyAdapter {
 		// 13. Use the Random and the speak method to either say
 		// "Simon says press this key" or "Press this key"
 		boolean simonSays = rnd.nextBoolean();
-		simonSays = rnd.nextBoolean();
 		if(simonSays){
 		System.out.println("Simon says press this key");
 		}
@@ -104,17 +114,14 @@ public class SimonSays extends KeyAdapter {
 			System.out.println(" press this key");
 		}
 		// Clean up
-	} catch (Exception e) {
-		e.printStackTrace();
-	}
-	if(simonSays){
-	System.out.println("Simon says press this key");
+	
+	
 }
 		     
 
 		// 14. Above, set the value of simonSays to true/false appropriately
 
-	}
+
 
 	private Component getNextRandomImage() {
 		this.imageIndex = new Random().nextInt(4) + 37;
