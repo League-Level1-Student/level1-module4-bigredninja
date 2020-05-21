@@ -50,7 +50,7 @@ public class Jeopardy implements ActionListener {
 		frame.setLayout(new BorderLayout());
 
 		// 1. Make the frame show up
-		frame.setVisible(false);
+		frame.setVisible(true);
 		// 2. Give your frame a title
 		frame.setTitle("bob");
 		// 3. Create a JPanel variable to hold the header using the createHeader method
@@ -68,15 +68,21 @@ public class Jeopardy implements ActionListener {
 		
 		// 9. Use the secondButton variable to hold a button using the createButton
 		// method
-		secondButton = createButton("$500");		// 10. Add the secondButton to the quizPanel
+		secondButton = createButton("$400");// 10. Add the secondButton to the quizPanel
+		quizPanel.add(secondButton);
 
 		// 11. Add action listeners to the buttons (2 lines of code)
 		secondButton.addActionListener(this);
 		firstButton.addActionListener(this);
 		// 12. Write the code to complete the actionPerformed() method below
-
-		// 13. Add buttons so that you have $200, $400, $600, $800 and $1000 questions
 		
+		// 13. Add buttons so that you have $200, $400, $600, $800 and $1000 questions
+		thirdButton = createButton("$600");
+		fourthButton = createButton("$800");
+		quizPanel.add(thirdButton);
+		quizPanel.add(fourthButton);
+		thirdButton.addActionListener(this);
+		fourthButton.addActionListener(this);
 		 /*
 		 * [optional] Use the showImage or playSound methods when the user answers a
 		 * question
@@ -110,7 +116,21 @@ public class Jeopardy implements ActionListener {
 		JButton buttonPressed = (JButton) e.getSource();
 		// If the buttonPressed was the firstButton
 		if (buttonPressed == firstButton) {
-			askQuestion("The most favored food bisides sushi", "Crab", 200);
+			askQuestion("What is my second favorite food", "crab", 200);
+			firstButton.setText("");
+		}
+		if (buttonPressed == secondButton) {
+			askQuestion("What is my second favorite color", "green", 400);
+			secondButton.setText("");
+				
+		}
+		if (buttonPressed == thirdButton) {
+			askQuestion("What is my favorite video game", "call of duty warzone", 600);
+			thirdButton.setText("");
+		}
+		if (buttonPressed == fourthButton) {
+			askQuestion("What is my  favorite gatorade", "cherry", 800);
+			fourthButton.setText("");
 		}
 		}
 			// Call the askQuestion() method
