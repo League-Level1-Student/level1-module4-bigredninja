@@ -29,6 +29,7 @@ public class FortuneTeller extends JPanel implements Runnable, MouseListener {
 
     FortuneTeller() throws Exception {
    	 // 1. Choose an image for your fortune teller and put it in your default package
+    	https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.alamy.com%2Fstock-photo%2Ffortune-telling-snow-globe-globes.html&psig=AOvVaw2Xpz5BAO0xHA337ASYGLRw&ust=1592533589490000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCMiChpmoiuoCFQAAAAAdAAAAABAM
    	 fortuneTellerImage = ImageIO.read(getClass().getResource("fortune teller.png"));
    	 // 2. Adjust the frameWidth and frameHeight variables to fit your image nicely (doesn’t need a new line of code)
      // 3. Complete the begin() method in the FortuneTellerRunner class
