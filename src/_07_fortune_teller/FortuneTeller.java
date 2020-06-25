@@ -23,18 +23,20 @@ import javax.swing.SwingUtilities;
 public class FortuneTeller extends JPanel implements Runnable, MouseListener {
 
     JFrame frame = new JFrame();
-
+    
     int frameWidth = 500;
     int frameHeight = 500;
-
+    
+    
     FortuneTeller() throws Exception {
    	 // 1. Choose an image for your fortune teller and put it in your default package
-    	https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.alamy.com%2Fstock-photo%2Ffortune-telling-snow-globe-globes.html&psig=AOvVaw2Xpz5BAO0xHA337ASYGLRw&ust=1592533589490000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCMiChpmoiuoCFQAAAAAdAAAAABAM
    	 fortuneTellerImage = ImageIO.read(getClass().getResource("fortune teller.png"));
    	 // 2. Adjust the frameWidth and frameHeight variables to fit your image nicely (doesn’t need a new line of code)
+   	 
      // 3. Complete the begin() method in the FortuneTellerRunner class
+   	 
  	 // 4. add a mouse listener to the frame
-
+   	 frame.addMouseListener(this);
     }
 
 
@@ -44,15 +46,15 @@ public class FortuneTeller extends JPanel implements Runnable, MouseListener {
    	 int mouseX = e.getX();
    	 int mouseY = e.getY();
    	 // 5. Print the mouseX variable
-
+   	 System.out.println(mouseX + " " + mouseY);
    	 // 6. Add the mouseY variable to the previous line so that it prints out too (no new line)
    	 // 7. Adjust your secret location co-ordinates here:
-   	 int secretLocationX = 0;
-   	 int secretLocationY = 0;
+   	 int secretLocationX = 260;
+   	 int secretLocationY = 377;
    	 /** If the mouse co-ordinates and secret location are close, we'll let them ask a question. */
    	 if (areClose(mouseX, secretLocationX) && areClose(mouseY, secretLocationY)) {
    		 // 8. Get the user to enter a question for the fortune teller
-
+   		 String question; JOptionPane.showInputDialog("what do you want to know about");
    		 // 9. Find a spooky sound and put it in your default package (freesound.org)
    		 // AudioClip sound = JApplet.newAudioClip(getClass().getResource("creepy-noise.wav"));
    		 // 10. Play the sound
