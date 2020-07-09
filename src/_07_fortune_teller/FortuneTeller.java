@@ -56,13 +56,14 @@ public class FortuneTeller extends JPanel implements Runnable, MouseListener {
    		 // 8. Get the user to enter a question for the fortune teller
    		 String question; JOptionPane.showInputDialog("what do you want to know about");
    		 // 9. Find a spooky sound and put it in your default package (freesound.org)
-   		 // AudioClip sound = JApplet.newAudioClip(getClass().getResource("creepy-noise.wav"));
+   		 
+   		  AudioClip sound = JApplet.newAudioClip(getClass().getResource("creepy-noise.wav"));
    		 // 10. Play the sound
-
+   		  sound.play();
    		 // 11. Use the pause() method below to wait until your music has finished
-
+   		  pause(7);
    		 // 12. Insert your completed Magic 8 ball code here
-
+   		  new Magic8Ball();
    	 }
 
     }
