@@ -4,6 +4,8 @@ package _08_calculator;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 public class Calculator implements ActionListener{
@@ -14,7 +16,8 @@ public class Calculator implements ActionListener{
 	JButton sub = new JButton();
 	JButton mul = new JButton();
 	JButton div = new JButton();
-	
+	JTextField text1 = new JTextField();
+	JTextField text2 = new JTextField();
 	public void showbutton() {
 		add.addActionListener(this);
 		sub.addActionListener(this);
@@ -44,9 +47,13 @@ public class Calculator implements ActionListener{
 		return a/b;
 		
 	}
+	
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
 		
+		if (e.getSource()==add) {
+			
+		}
 	}
 }
