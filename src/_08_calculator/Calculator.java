@@ -18,6 +18,7 @@ public class Calculator implements ActionListener{
 	JButton div = new JButton();
 	JTextField text1 = new JTextField();
 	JTextField text2 = new JTextField();
+	JTextField answer = new JTextField();
 	public void showbutton() {
 		add.addActionListener(this);
 		sub.addActionListener(this);
@@ -30,6 +31,7 @@ public class Calculator implements ActionListener{
 		panel.add(div);
 		frame.pack();
 		frame.setVisible(true);
+		frame.add(answer);
 	}
 	public static int add(int a,int b) {
 		return a+b;
@@ -53,7 +55,11 @@ public class Calculator implements ActionListener{
 		// TODO Auto-generated method stub
 		
 		if (e.getSource()==add) {
-			
+		String textc1 = text1.getText();
+		String textc2 = text2.getText();
+	int a = Integer.parseInt(textc1);
+	int b = Integer.parseInt(textc2);
+	add(a,b);
 		}
 	}
 }
