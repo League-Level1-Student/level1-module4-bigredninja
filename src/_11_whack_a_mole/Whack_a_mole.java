@@ -1,10 +1,12 @@
 package _11_whack_a_mole;
 
+import java.applet.AudioClip;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Date;
 import java.util.Random;
 
+import javax.swing.JApplet;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -61,9 +63,15 @@ Date date = new Date();
 			}
 		}
 		else {	
-			speak("not quite");
+			badclicks++;
+			speak(" ha ha ha your wrong hobo");
 			frame.dispose();
 			Gui();
+			if (badclicks==5) {
+				frame.dispose();
+				endGame(date,badclicks);
+				speak("This is exactly what i have been waiting for, you loser");
+			}
 		}
 	}
 	static void speak(String words) {
@@ -89,6 +97,10 @@ Date date = new Date();
 	    JOptionPane.showMessageDialog(null, "Your whack rate is "
 	            + ((timeAtEnd.getTime() - timeAtStart.getTime()) / 1000.00 / molesWhacked)
 	                  + " moles per second.");
+	}
+	private void playSound(String fileName) { 
+	    AudioClip sound = JApplet.newAudioClip(getClass().getResource(fileName));
+	    sound.play();
 	}
 
 }
